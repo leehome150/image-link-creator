@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading"
 import {Switch, Route} from 'react-router-dom';
+import 'antd/dist/antd.css'
 
 const Home = lazy(() =>
     import('./pages/Home')
