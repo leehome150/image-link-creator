@@ -2,6 +2,7 @@ import React from "react"
 import {Form, Input, Button} from 'antd';
 import styled from "styled-components"
 import {useStores} from "../stores"
+import {useHistory} from 'react-router-dom'
 
 
 
@@ -28,7 +29,7 @@ const tailLayout = {
 
 const Components = () => {
     const {AuthStore}=useStores();
-
+const history= useHistory()
     const onFinish = values => {
         console.log('Success:', values);
         AuthStore.setUsername(values.username);
@@ -36,6 +37,7 @@ const Components = () => {
         AuthStore.register()
             .then(()=>{
                 console.log('注册成功')
+                history.push('/')
             }).catch(()=>{
             console.log('注册失败，什么都不做')
         })

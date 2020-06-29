@@ -2,6 +2,7 @@ import React from "react"
 import {Form, Input, Button, Checkbox} from 'antd';
 import styled from "styled-components"
 import {useStores} from "../stores"
+import {useHistory} from 'react-router-dom'
 
 
 const Wrapper = styled.div`
@@ -27,6 +28,7 @@ const tailLayout = {
 
 const Components = () => {
     const {AuthStore}=useStores()
+    const history = useHistory()
     const onFinish = values => {
         console.log('Success:', values);
         AuthStore.setUsername(values.username)
@@ -34,6 +36,7 @@ const Components = () => {
         AuthStore.login()
             .then(()=>{
                 console.log('登录成功，跳转至首页')
+                history.push('/')
             }).catch(()=>{
             console.log('登录失败')
         })
