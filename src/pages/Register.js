@@ -3,7 +3,7 @@ import {Form, Input, Button} from 'antd';
 import styled from "styled-components"
 import {useStores} from "../stores"
 import {useHistory} from 'react-router-dom'
-
+import {message} from "antd"
 
 
 const Wrapper = styled.div`
@@ -36,10 +36,9 @@ const history= useHistory()
         AuthStore.setPassword(values.password);
         AuthStore.register()
             .then(()=>{
-                console.log('注册成功')
                 history.push('/')
             }).catch(()=>{
-            console.log('注册失败，什么都不做')
+          message.error('注册失败')
         })
     };
 

@@ -3,6 +3,7 @@ import {Form, Input, Button, Checkbox} from 'antd';
 import styled from "styled-components"
 import {useStores} from "../stores"
 import {useHistory} from 'react-router-dom'
+import {message} from "antd"
 
 
 const Wrapper = styled.div`
@@ -35,10 +36,9 @@ const Components = () => {
         AuthStore.setPassword(values.password)
         AuthStore.login()
             .then(()=>{
-                console.log('登录成功，跳转至首页')
                 history.push('/')
             }).catch(()=>{
-            console.log('登录失败')
+           message.error('登录失败')
         })
     };
 
