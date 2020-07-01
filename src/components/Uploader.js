@@ -61,7 +61,7 @@ const Component = observer(() => {
                 message.warning('请先登录再上传')
                 return false
             }
-            if (!/(svg$)|(png$)|(jpg$)|(jpeg$)|(gif$)/ig.test(file.type)) {
+            if (/(svg$)|(png$)|(jpg$)|(jpeg$)|(gif$)/ig.test(file.type)) {
                 message.error('只能上传png/svg/jpg/gif格式的图片');
                 return false;
             }
@@ -85,7 +85,7 @@ const Component = observer(() => {
     return (
         <div>
             <Spin tip="上传中" spinning={ImageStore.isUploading}>
-            <Dragger {...props}>
+            <Dragger {...props} style={{backgroundColor:"transparent",border:"transparent"}}>
                 <p className="ant-upload-drag-icon">
                     <InboxOutlined/>
                 </p>

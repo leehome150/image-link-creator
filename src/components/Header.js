@@ -8,7 +8,7 @@ import { observer } from 'mobx-react';
 
 
 const Header = styled.header`
-background:#8896B3;
+background:transparent;
 display:flex;
 align-items:center;
 padding:10px 100px;
@@ -30,6 +30,14 @@ const Login = styled.div`
 const StyledButton = styled(Button)`
 margin-left:10px;
 `;
+const Span=styled.span`
+font-family:Impact, fantasy;
+font-size:26px;
+position:fixed;
+left:50%;
+transform:translateX(-50%)
+    
+`
 
 
 const Components=observer(() => {
@@ -42,13 +50,11 @@ const Components=observer(() => {
     };
 
     const handleLogin = () => {
-        console.log('跳转到登录页面')
         history.push('/login')
 
     };
 
     const handleRegister = () => {
-        console.log('跳转到注册页面')
         history.push('/register')
     }
 
@@ -58,7 +64,7 @@ const Components=observer(() => {
             <nav>
                 <StyledLink to="/" activeClassName="active" exact>首页</StyledLink>
                 <StyledLink to="/history" activeClassName="active">上传历史</StyledLink>
-                <StyledLink to="/about" activeClassName="active">关于我</StyledLink>
+                <Span>Afeng-epic</Span>
             </nav>
             <Login>
                 {
@@ -66,7 +72,7 @@ const Components=observer(() => {
                         {UserStore.currentUser.attributes.username} <StyledButton type="primary" onClick={handleLogout}>注销</StyledButton>
                     </> :<>
                         <StyledButton type="primary" onClick={handleLogin}>登录</StyledButton>
-                        <StyledButton type="primary" onClick={handleRegister}>注册</StyledButton>
+                        <StyledButton type="primary" onClick={handleRegister}>注册账户</StyledButton>
                     </>
 
                 }

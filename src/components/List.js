@@ -14,7 +14,7 @@ border:1px solid #ccc;
 
 
 const Component = observer(() => {
-    const {HistoryStore} = useStores()
+    const {HistoryStore,UserStore} = useStores()
     const loadMore = () => {
         HistoryStore.find()
     }
@@ -23,7 +23,8 @@ const Component = observer(() => {
         return () => {
             HistoryStore.reset()
         }
-    },[])
+        // eslint-disable-next-line
+    },[UserStore.currentUser])
     return (
         <div>
             <InfiniteScroll
@@ -44,8 +45,8 @@ const Component = observer(() => {
                                 <h5>{item.attributes.filename}</h5>
                             </div>
                             <div>
-                                <a target="_blank"
-                                   href={item.attributes.url.attributes.url}>{item.attributes.url.attributes.url}</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href={item.attributes.url.attributes.url}>点击预览</a>
                             </div>
                         </List.Item>
                     }

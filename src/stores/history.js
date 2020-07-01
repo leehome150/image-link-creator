@@ -37,4 +37,4 @@ class HistoryStore {
 
 }
 
-export default new HistoryStore
+export default new HistoryStore()
