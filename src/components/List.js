@@ -45,7 +45,7 @@ const Component = observer(() => {
                                 <h5>{item.attributes.filename}</h5>
                             </div>
                             <div>
-                                <a target="_blank" rel="noopener noreferrer"
+                                <a target="_blank"  rel="noopener noreferrer"
                                    href={item.attributes.url.attributes.url}>点击预览</a>
                             </div>
                         </List.Item>

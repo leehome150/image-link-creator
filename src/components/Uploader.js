@@ -1,7 +1,7 @@
 import React, {useRef} from "react"
 import {useStores} from "../stores"
 import {observer, useLocalStore} from 'mobx-react';
-import {message, Upload,Spin} from 'antd';
+import {message, Upload, Spin} from 'antd';
 import {InboxOutlined} from '@ant-design/icons';
 import styled from "styled-components"
 
@@ -61,8 +61,8 @@ const Component = observer(() => {
                 message.warning('请先登录再上传')
                 return false
             }
-            if (/(svg$)|(png$)|(jpg$)|(jpeg$)|(gif$)/ig.test(file.type)) {
-                message.error('只能上传png/svg/jpg/gif格式的图片');
+            if (!/(png|jpg|jpeg|gif)$/i.test(file.type)) {
+                message.error('只能上传png/jpg/gif格式的图片');
                 return false;
             }
             if (file.size > 1024 * 1024) {
@@ -85,15 +85,15 @@ const Component = observer(() => {
     return (
         <div>
             <Spin tip="上传中" spinning={ImageStore.isUploading}>
-            <Dragger {...props} style={{backgroundColor:"transparent",border:"transparent"}}>
-                <p className="ant-upload-drag-icon">
-                    <InboxOutlined/>
-                </p>
-                <p className="ant-upload-text">点击或则拖拽上传图片</p>
-                <p className="ant-upload-hint">
-                   仅支持.png/.gif/.jpg/.svg/格式的图片，图片最大1M
-                </p>
-            </Dragger>
+                <Dragger {...props} style={{backgroundColor: "transparent", border: "transparent"}}>
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined/>
+                    </p>
+                    <p className="ant-upload-text">点击或则拖拽上传图片</p>
+                    <p className="ant-upload-hint">
+                        仅支持.png/.gif/.jpg/.svg/格式的图片，图片最大1M
+                    </p>
+                </Dragger>
             </Spin>
             {
                 ImageStore.serverFile ? <Result>
@@ -124,7 +124,7 @@ const Component = observer(() => {
                     </dl>
                 </Result> : null
             }
-            </div>
+        </div>
     )
 })
 

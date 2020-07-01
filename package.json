@@ -2,7 +2,7 @@
   "name": "react-epic",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leehome150.gitee.io/image-link-creator-website/",
+  "homepage": "https://leehome150.github.io/image-link-creator-website/",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
     "@babel/core": "7.9.0",

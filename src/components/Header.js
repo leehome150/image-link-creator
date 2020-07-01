@@ -11,7 +11,8 @@ const Header = styled.header`
 background:transparent;
 display:flex;
 align-items:center;
-padding:10px 100px;
+justify-content:space-between;
+padding:10px 10px;
 `
 const Logo = styled.img`
 height:30px;
@@ -19,24 +20,19 @@ height:30px;
 
 const StyledLink = styled(NavLink)`
 color:#fff;
-margin-left:30px;
+margin-left:20px;
 &.active{
 border-bottom:1px solid #fff;
 }
 `
 const Login = styled.div`
-  margin-left: auto;
 `
 const StyledButton = styled(Button)`
 margin-left:10px;
 `;
 const Span=styled.span`
 font-family:Impact, fantasy;
-font-size:26px;
-position:fixed;
-left:50%;
-transform:translateX(-50%)
-    
+font-size:26px;    
 `
 
 
@@ -60,12 +56,13 @@ const Components=observer(() => {
 
     return (
         <Header>
-            <Logo src={LogoUrl} alt=""/>
+
             <nav>
+                <Logo src={LogoUrl} alt=""/>
                 <StyledLink to="/" activeClassName="active" exact>首页</StyledLink>
                 <StyledLink to="/history" activeClassName="active">上传历史</StyledLink>
-                <Span>Afeng-epic图床</Span>
             </nav>
+            <Span>Afeng-epic图床</Span>
             <Login>
                 {
                     UserStore.currentUser ? <>
