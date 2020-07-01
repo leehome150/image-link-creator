@@ -64,7 +64,7 @@ const Components=observer(() => {
             <nav>
                 <StyledLink to="/" activeClassName="active" exact>首页</StyledLink>
                 <StyledLink to="/history" activeClassName="active">上传历史</StyledLink>
-                <Span>Afeng-epic</Span>
+                <Span>Afeng-epic图床</Span>
             </nav>
             <Login>
                 {

@@ -2,12 +2,12 @@
   "name": "react-epic",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://leehome150.gitee.io/image-link-creator-website/",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
     "@babel/core": "7.9.0",
     "@babel/plugin-proposal-decorators": "^7.10.3",
     "@svgr/webpack": "4.3.3",
-    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",

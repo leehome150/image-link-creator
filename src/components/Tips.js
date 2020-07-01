@@ -4,6 +4,7 @@ import {observer} from "mobx-react"
 import styled from "styled-components"
 
 const Tips =styled.div`
+font-size:16px;
 background:transparent;
 margin: 30px 0;
 padding:10px;
