@@ -91,7 +91,7 @@ const Component = observer(() => {
                     </p>
                     <p className="ant-upload-text">点击或则拖拽上传图片</p>
                     <p className="ant-upload-hint">
-                        仅支持.png/.gif/.jpg/.svg/格式的图片，图片最大1M
+                        仅支持.png/.gif/.jpg/格式的图片，图片最大1M
                     </p>
                 </Dragger>
             </Spin>
